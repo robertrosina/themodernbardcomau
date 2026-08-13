@@ -477,3 +477,18 @@
   .contact-visual{display:grid;gap:34px}
   .contact-image{margin:0;width:100%;max-width:680px}
 }
+
+/* v36: more breathing room after About details; larger Contact image. */
+.about-film-return{margin-top:46px}
+
+.contact-inner{max-width:1240px}
+.contact-grid{grid-template-columns:minmax(0,1.28fr) minmax(330px,.72fr);gap:7vw;align-items:start}
+.contact-image{margin-top:34px}
+.contact-image img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center center}
+
+@media(max-width:900px){
+  .about-film-return{margin-top:38px}
+  .contact-inner{max-width:760px}
+  .contact-grid{grid-template-columns:1fr;gap:48px}
+  .contact-image{margin-top:0;width:100%;max-width:none}
+}
