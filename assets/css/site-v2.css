@@ -460,3 +460,9 @@
 .audio-track-duration{font-size:10px;letter-spacing:.06em;color:#77766f;font-variant-numeric:tabular-nums}
 @media(max-width:900px){.audio-library-player{grid-template-columns:1fr;gap:20px;align-items:start}.audio-track-list{grid-template-columns:1fr}.audio-track-button:nth-child(odd){border-right:0}.audio-track-button:nth-child(even){padding-left:0}.audio-track-button.active{padding-left:15px}}
 @media(max-width:560px){.audio-track-button{grid-template-columns:28px minmax(0,1fr) auto;gap:9px;padding-top:13px;padding-bottom:13px}.audio-track-copy strong{font-size:16px}.audio-library-now-playing h3{font-size:28px}}
+
+/* Modern Bard v34: breathing room before performance videos */
+.single-repertoire-page #performance-videos-heading{margin-top:44px}
+@media(max-width:900px){
+  .single-repertoire-page #performance-videos-heading{margin-top:36px}
+}
