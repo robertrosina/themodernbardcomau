@@ -125,3 +125,33 @@ const header=document.querySelector('[data-header]');const toggle=document.query
     });
   });
 })();
+
+
+// Selected audio library: one player, with each row loading the chosen excerpt.
+(() => {
+  const player = document.getElementById('audioLibraryPlayer');
+  const title = document.getElementById('audioTrackTitle');
+  const meta = document.getElementById('audioTrackMeta');
+  const buttons = [...document.querySelectorAll('.audio-track-button[data-audio-src]')];
+  if (!player || !title || !meta || !buttons.length) return;
+
+  const selectTrack = async (button) => {
+    const src = button.dataset.audioSrc;
+    const changed = player.getAttribute('src') !== src;
+    if (changed) {
+      player.pause();
+      player.setAttribute('src', src);
+      player.load();
+    }
+    title.textContent = button.dataset.audioTitle || '';
+    meta.textContent = button.dataset.audioMeta || '';
+    buttons.forEach((item) => {
+      const active = item === button;
+      item.classList.toggle('active', active);
+      item.setAttribute('aria-pressed', String(active));
+    });
+    try { await player.play(); } catch (_) { /* Browser may require another explicit play action. */ }
+  };
+
+  buttons.forEach((button) => button.addEventListener('click', () => selectTrack(button)));
+})();
