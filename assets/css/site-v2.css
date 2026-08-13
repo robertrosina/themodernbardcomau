@@ -467,3 +467,13 @@
 @media(max-width:900px){
   .single-repertoire-page #performance-videos-heading{padding-top:40px}
 }
+
+
+/* Modern Bard contact waterfront image */
+.contact-visual{min-width:0}
+.contact-image{margin:40px 0 0;overflow:hidden}
+.contact-image img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center center}
+@media(max-width:900px){
+  .contact-visual{display:grid;gap:34px}
+  .contact-image{margin:0;width:100%;max-width:680px}
+}
