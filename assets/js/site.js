@@ -62,3 +62,66 @@ const header=document.querySelector('[data-header]');const toggle=document.query
     });
   });
 })();
+
+
+// Homepage emotional film: preserve the original splash image and open the film in a focused overlay.
+(() => {
+  const open = document.querySelector('[data-film-open]');
+  const modal = document.querySelector('[data-film-modal]');
+  const video = modal?.querySelector('.film-modal-video');
+  const closes = [...(modal?.querySelectorAll('[data-film-close]') || [])];
+  if (!open || !modal || !video) return;
+
+  const show = () => {
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    window.setTimeout(() => video.focus(), 0);
+  };
+  const hide = () => {
+    video.pause();
+    modal.hidden = true;
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    open.focus();
+  };
+
+  open.addEventListener('click', show);
+  closes.forEach((button) => button.addEventListener('click', hide));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modal.hidden) hide();
+  });
+
+  // Links from elsewhere on the site can return to the splash and open the film directly.
+  const url = new URL(window.location.href);
+  if (url.searchParams.get('film') === 'open') {
+    show();
+    url.searchParams.delete('film');
+    window.history.replaceState({}, '', url.pathname + url.search + url.hash);
+  }
+})();
+
+// Repertoire performance selector: one player, three song tabs, matching the compact selector logic of the earlier music site.
+(() => {
+  const player = document.getElementById('performancePlayer');
+  const source = document.getElementById('performanceVideoSource');
+  const tabs = [...document.querySelectorAll('.performance-video-tab[data-video-src]')];
+  if (!player || !source || !tabs.length) return;
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const next = tab.dataset.videoSrc;
+      const poster = tab.dataset.videoPoster || '';
+      if (source.getAttribute('src') !== next) {
+        player.pause();
+        source.setAttribute('src', next);
+        if (poster) player.setAttribute('poster', poster);
+        player.load();
+      }
+      tabs.forEach((item) => {
+        const active = item === tab;
+        item.classList.toggle('active', active);
+        item.setAttribute('aria-selected', String(active));
+      });
+    });
+  });
+})();

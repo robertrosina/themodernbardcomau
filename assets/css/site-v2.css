@@ -358,3 +358,82 @@
   font-weight:500;
   text-shadow:0 1px 2px rgba(0,0,0,.72),0 0 7px rgba(0,0,0,.22);
 }
+
+
+/* Modern Bard v28: visible media controls and restrained contact booking mark */
+.audio-card audio{
+  color-scheme:light;
+  background:#e8e4db;
+  border-radius:999px;
+}
+.audio-card audio::-webkit-media-controls-panel{
+  background-color:#e8e4db;
+}
+.audio-card audio::-webkit-media-controls-play-button{
+  opacity:1;
+  filter:brightness(0);
+}
+.audio-card audio::-webkit-media-controls-mute-button{
+  opacity:.9;
+  filter:brightness(0);
+}
+
+
+/* Modern Bard v29: emotional film on About, separate proof-led Repertoire */
+.about-film-section{padding:0 var(--pad) 7vw}
+.about-film-inner,.about-details-inner{max-width:1120px;margin:0 auto}
+.about-film-heading-row{display:grid;grid-template-columns:minmax(0,.9fr) minmax(320px,1.1fr);gap:7vw;align-items:end;margin-bottom:30px;padding-top:2vw}
+.about-film-heading-row h2,.about-details-inner>h2{font-family:var(--serif);font-size:clamp(38px,4.6vw,68px);font-weight:400;line-height:1.05;margin:0}
+.about-film-heading-row p{max-width:570px;margin:0;font-size:16px;line-height:1.6;color:#5f605a}
+.about-film-video{display:block;width:100%;aspect-ratio:16/9;background:#111;object-fit:cover}
+.about-details-section{padding:0 var(--pad) 7.4vw}
+.about-details-inner>h2{margin-bottom:24px}
+.about-details-section .about-details-list{max-width:1120px;margin-top:0}
+.about-details-section .about-kicker{margin-top:34px}
+.single-repertoire-page .media-showcase .repertoire-heading{margin:0 0 8px}
+.single-repertoire-page .media-showcase .performance-intro{margin:0 0 28px}
+@media(max-width:900px){
+  .about-film-section{padding:0 var(--pad) 72px}
+  .about-film-heading-row{grid-template-columns:1fr;gap:14px;margin-bottom:24px;padding-top:0}
+  .about-film-heading-row h2,.about-details-inner>h2{font-size:40px}
+  .about-details-section{padding:0 var(--pad) 84px}
+  .single-repertoire-page .media-showcase .performance-intro{margin-bottom:22px}
+}
+
+
+/* Modern Bard v30: homepage manifesto film + three-video repertoire selector */
+.home-page .hero{background:#111;isolation:isolate}
+.home-page .hero:after{pointer-events:none;z-index:1;background:linear-gradient(to bottom,rgba(0,0,0,.16),transparent 34%,rgba(0,0,0,.10))}
+.hero-film-card{position:absolute;right:var(--pad);bottom:42px;z-index:3;width:clamp(290px,30vw,445px);aspect-ratio:16/9;padding:0;border:1px solid rgba(255,255,255,.72);background:#111;overflow:hidden;cursor:pointer;box-shadow:0 18px 48px rgba(0,0,0,.38);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.hero-film-card:hover,.hero-film-card:focus-visible{transform:translateY(-3px);border-color:#fff;box-shadow:0 22px 60px rgba(0,0,0,.48);outline:none}
+.hero-film-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:none}
+.hero-film-card-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,.06) 68%)}
+.hero-film-card-label{position:absolute;left:18px;right:18px;bottom:16px;display:flex;align-items:center;gap:12px;color:#fff;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;text-align:left;text-shadow:0 2px 12px rgba(0,0,0,.65)}
+.hero-film-card-play{display:inline-grid;place-items:center;width:42px;height:42px;flex:0 0 42px;border:1px solid rgba(255,255,255,.9);border-radius:50%;background:rgba(0,0,0,.28);font-size:13px;padding-left:2px}
+.hero-film-card-copy{display:flex;flex-direction:column;gap:3px;line-height:1.15}.hero-film-card-copy strong{font:inherit;font-weight:600;letter-spacing:.13em}.hero-film-card-copy small{font-size:10px;font-weight:400;letter-spacing:.08em;text-transform:none;opacity:.86}
+.film-modal[hidden]{display:none}
+.film-modal{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:clamp(18px,4vw,60px)}
+.film-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.92);backdrop-filter:blur(5px)}
+.film-modal-panel{position:relative;z-index:1;width:min(1100px,94vw);background:#000;box-shadow:0 26px 80px rgba(0,0,0,.5)}
+.film-modal-video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.film-modal-close{position:absolute;right:0;top:-44px;width:38px;height:38px;border:0;background:transparent;color:#fff;font-size:30px;line-height:1;cursor:pointer}
+.media-showcase-quiet{padding-top:0}
+.performance-selector-player{margin-top:0}
+.performance-video-selector{display:flex;align-items:stretch;justify-content:center;margin-top:0;border-top:1px solid rgba(23,24,21,.18);border-bottom:1px solid rgba(23,24,21,.18)}
+.performance-video-tab{flex:1 1 0;min-width:0;padding:15px 16px;border:0;border-right:1px solid rgba(23,24,21,.18);background:transparent;color:#5d5e58;font-family:var(--serif);font-size:16px;line-height:1.25;cursor:pointer;transition:background .22s ease,color .22s ease}
+.performance-video-tab:last-child{border-right:0}
+.performance-video-tab:hover,.performance-video-tab:focus-visible{background:rgba(23,24,21,.045);color:var(--ink)}
+.performance-video-tab.active{background:var(--ink);color:var(--paper)}
+@media(max-width:900px){
+  .hero-film-card{right:24px;bottom:132px;width:min(360px,calc(100% - 48px))}
+  .film-modal{padding:16px}
+  .performance-video-selector{flex-direction:column}
+  .performance-video-tab{border-right:0;border-bottom:1px solid rgba(23,24,21,.18);text-align:left;padding:14px 16px}
+  .performance-video-tab:last-child{border-bottom:0}
+}
+
+/* About-page return link to the homepage manifesto film. */
+.about-film-return{margin:24px 0 0}
+.about-film-return a{display:inline-block;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid rgba(23,24,21,.42);padding-bottom:4px;transition:border-color .2s ease,opacity .2s ease}
+.about-film-return a:hover,.about-film-return a:focus-visible{border-color:var(--ink);opacity:.72;outline:none}
+
