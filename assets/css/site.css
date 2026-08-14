@@ -8,7 +8,7 @@
 :root{--hero-text:#afb8a8}
 .home-page .site-header{color:var(--hero-text)}
 .home-page .hero-caption{color:var(--hero-text)}
-.brand-placeholder{min-width:1px;min-height:1px}
+.brand-spacer{min-width:1px;min-height:1px}
 .nav-left{gap:24px}
 .repertoire-wrap{max-width:1160px;margin:0 auto;padding:6vw var(--pad) 10vw}
 .repertoire-page .agenda-title{margin-bottom:56px}
@@ -26,7 +26,7 @@
 .section-intro{font-family:var(--serif);font-size:21px;line-height:1.45;max-width:720px;margin:-15px 0 50px}
 .instrumental-section{padding-top:15px}
 @media(max-width:1120px) and (min-width:901px){.nav-left{gap:16px;font-size:13px}.brand{font-size:22px}}
-@media(max-width:900px){.brand-placeholder{display:block}.repertoire-wrap{padding-top:72px}.media-showcase,.listen-section,.repertoire-section{margin-top:68px}.media-heading-row{align-items:flex-start;flex-direction:column;gap:7px}.audio-grid{grid-template-columns:1fr}.repertoire-heading{font-size:38px}}
+@media(max-width:900px){.brand-spacer{display:block}.repertoire-wrap{padding-top:72px}.media-showcase,.listen-section,.repertoire-section{margin-top:68px}.media-heading-row{align-items:flex-start;flex-direction:column;gap:7px}.audio-grid{grid-template-columns:1fr}.repertoire-heading{font-size:38px}}
 
 
 /* July 2026 about-page editorial layout */
