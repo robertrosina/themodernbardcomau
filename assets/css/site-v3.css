@@ -534,3 +534,18 @@
 @media(max-width:900px){
   .about-copy-block .about-film-return{margin-top:52px}
 }
+
+
+/* Listen page: Folk & Fable album artwork beside the introduction. */
+.listen-page-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,340px);gap:clamp(52px,8vw,120px);align-items:center;margin-top:0}
+.listen-page-intro-copy{min-width:0}
+.listen-page .listen-page-intro .agenda-title{margin-bottom:26px}
+.listen-page .listen-page-intro .repertoire-intro{margin:0;max-width:620px}
+.listen-album-cover{margin:0;justify-self:end;width:100%;max-width:320px}
+.listen-album-cover img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.listen-page .selected-excerpts{margin-top:76px}
+@media(max-width:900px){
+  .listen-page-intro{grid-template-columns:1fr;gap:38px;align-items:start}
+  .listen-album-cover{justify-self:start;width:min(78vw,360px);max-width:none}
+  .listen-page .selected-excerpts{margin-top:64px}
+}
