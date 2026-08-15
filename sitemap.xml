@@ -2,7 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://themodernbard.com.au/</loc></url>
   <url><loc>https://themodernbard.com.au/about.html</loc></url>
+  <url><loc>https://themodernbard.com.au/setlists.html</loc></url>
+  <url><loc>https://themodernbard.com.au/listen.html</loc></url>
+  <url><loc>https://themodernbard.com.au/watch.html</loc></url>
   <url><loc>https://themodernbard.com.au/gallery.html</loc></url>
-  <url><loc>https://themodernbard.com.au/repertoire.html</loc></url>
   <url><loc>https://themodernbard.com.au/contact.html</loc></url>
 </urlset>
