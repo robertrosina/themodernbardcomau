@@ -112,7 +112,7 @@
 
 
 /* Modern Bard v9: original promotional photography, watch-first repertoire, and excerpts across all strands */
-.home-page .hero img{object-position:center 45%;}
+.home-page .hero img{object-position:center 45%;filter:brightness(.78) saturate(.88)}
 .about-row-manifesto .about-image img{aspect-ratio:4/5;object-position:center 38%}
 .about-row-biography .about-image img{aspect-ratio:1/1;object-position:center 35%}
 .repertoire-card img{object-position:center center}
